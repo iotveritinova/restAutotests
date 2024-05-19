@@ -1,0 +1,20 @@
+{
+  "companyId" : 1,
+  "plane" : "Plane№2",
+  "townFrom" : "Moskow",
+  "townTo" : "Pekin",
+  "timeOut": "2021-05-16T03:31:43",
+  "timeIn" : "2021-05-16T03:31:43",
+  "passengerList" : [
+    {
+      "firstName": "Andrey",
+      "middleName": "Maksimov",
+      "lastName": "Urkov"
+    },
+    {
+      "firstName": "Maksim",
+      "middleName": "Maksimov",
+      "lastName": "Urkov"
+    }
+  ]
+}
