@@ -3,7 +3,12 @@
 <suite name="All Tests">
     <test name="Trip" parallel="methods" thread-count="1">
         <classes>
-            <class name="TripTest"/>
+            <class name="TripTest">
+                <methods>
+                    <!--include name="getTrip"/-->
+                    <!--include name="putTrip"/-->
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

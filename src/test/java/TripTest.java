@@ -1,3 +1,4 @@
+import io.qameta.allure.Description;
 import org.apache.commons.lang3.RandomUtils;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterMethod;
@@ -12,6 +13,26 @@ import tripDemo.repo.TripRepository;
 import tripDemo.steps.TripSteps;
 
 import java.util.ArrayList;
+
+/*Основные аннотации Allure
+(для корректного отображения русскояз аннотаций в аллюр
+нужно конвертировать файлы с кириллицей в кодировку
+File-> File Encoding -> windows-1251 ->Convert
+
+    @Step - аннотация, размещаемая над тестом. Используется для описания тестового шага.
+    @Attachment - при использовании метода с данной аннотацией считанная информация будет
+    добавлена в отчет в виде файла с соответствующим расширением.
+    @Description — аннотация, размещаемая над тестом или шагом. Позволяет прикрепить
+    описание к тесту или шагу теста.
+    @Epic — аннотация, размещаемая над тестом. Позволяет группировать тесты по эпикам.
+    Данная аннотация принимает параметр «value» — наименование эпика.
+    @Feature — аннотация, размещаемая над тестом. Позволяет группировать тесты по
+    проверяемому функционалу. Данная аннотация принимает параметр «value» —
+    наименование функционала.
+    @Story - аннотация, размещаемая над тестом. Позволяет группировать тесты по
+    User story. Данная аннотация принимает параметр «value» — наименование User story.
+
+ */
 
 public class TripTest extends BaseTest {
 
@@ -35,6 +56,7 @@ public class TripTest extends BaseTest {
     }
 
     @Test(groups = {"withAddedEntity"})
+    @Description("Проверка метода post")
     public void createTrip() {
         Trip responseTrip = TripSteps.sendPost(trip);
         new TripComparator(responseTrip, trip).compare();
@@ -43,6 +65,7 @@ public class TripTest extends BaseTest {
     }
 
     @Test(groups = {"withExistTrip", "withAddedEntity"})
+    @Description("Проверка метода get")
     public void getTrip() {
         Trip responseTrip = TripSteps.sendGet(trip.getId());
         new TripComparator(trip, responseTrip).compare();
@@ -51,6 +74,7 @@ public class TripTest extends BaseTest {
     }
 
     @Test(groups = {"withExistTrip", "withAddedEntity"})
+    @Description("Проверка метода put")
     public void putTrip() {
         trip.setPlane("newPlane");
 
@@ -61,6 +85,7 @@ public class TripTest extends BaseTest {
     }
 
     @Test(groups = {"withExistTrip"})
+    @Description("Проверка метода delete")
     public void deleteTrip() {
         Trip responseTrip = TripSteps.sendDelete(trip.getId());
         new TripComparator(trip, responseTrip).compare();

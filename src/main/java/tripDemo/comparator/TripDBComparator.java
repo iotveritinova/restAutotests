@@ -1,5 +1,6 @@
 package tripDemo.comparator;
 
+import io.qameta.allure.Step;
 import org.assertj.core.api.Assertions;
 import tripDemo.mapper.TripMapper;
 import tripDemo.model.Trip;
@@ -24,6 +25,7 @@ public class TripDBComparator implements IComparator {
 
 
     @Override
+    @Step("Проверка информации в базе данный")
     public void compare() {
         assertThat(actual).usingRecursiveComparison()
                 .isEqualTo(expected);

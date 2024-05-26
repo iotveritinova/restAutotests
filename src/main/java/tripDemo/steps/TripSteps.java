@@ -1,5 +1,6 @@
 package tripDemo.steps;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
 import tripDemo.api.ApiHelper;
@@ -20,24 +21,28 @@ public class TripSteps {
 
     private static final Map<IPathEnum, String> serviceDataMap = ConfigQA.getInstance().getServiceDataMap();
 
+    @Step("ֲûחמג לועמהא post")
     public static Trip sendPost(Trip trip) {
         String path = serviceDataMap.get(TripPathEnum.CREATE_TRIP);
         Response response = ApiHelper.post(path, toJsonString(trip));
         return doCommonOperation(response);
     }
 
+    @Step("ֲûחמג לועמהא get")
     public static Trip sendGet(long id) {
         String path = serviceDataMap.get(TripPathEnum.GET_TRIP);
         Response response = ApiHelper.get(path, id);
         return doCommonOperation(response);
     }
 
+    @Step("ֲûחמג לועמהא put")
     public static Trip sendPut(Trip trip) {
         String path = serviceDataMap.get(TripPathEnum.PUT_TRIP);
         Response response = ApiHelper.put(path, toJsonString(trip));
         return doCommonOperation(response);
     }
 
+    @Step("ֲûחמג לועמהא delete")
     public static Trip sendDelete(long id) {
         String path = serviceDataMap.get(TripPathEnum.DELETE_TRIP);
         Response response = ApiHelper.delete(path, id);

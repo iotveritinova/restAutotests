@@ -1,5 +1,6 @@
 package tripDemo.comparator;
 
+import io.qameta.allure.Step;
 import lombok.AllArgsConstructor;
 import tripDemo.model.Trip;
 
@@ -30,6 +31,7 @@ public class TripComparator implements IComparator {
 
      */
 
+    @Step("ѕроверка полученного ответа с запросом к сервису")
     public void compare() {
         assertThat(actual).usingRecursiveComparison()
                 .ignoringFields("id", "passengerList.id")

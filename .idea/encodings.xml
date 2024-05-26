@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<project version="4"/>
+        <!--?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/tripDemo/comparator/TripComparator.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/tripDemo/comparator/TripDBComparator.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/java/tripDemo/steps/TripSteps.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/test/java/TripTest.java" charset="windows-1251" />
+  </component>
+</project-->
